@@ -1,0 +1,12 @@
+<div class="mt-2">
+  <p class="text-primary">Seçilen Frameworkler</p>
+  <div *ngFor="let item of selectedFramework">
+    <p>{{item.name}}</p>
+  </div>
+  <p class="text-primary">Soru-Cevaplar</p>
+    <div *ngFor="let item of form.get('questionsAndUserAnswers').controls">
+        <div>Soru: {{item.value.question}}</div>
+        <div>Cevap: {{item.value.answers}}</div>
+    </div>
+    <p *ngIf="this.form.get('otherDescription').value">Diğer Açıklama: {{this.form.get('otherDescription').value}}</p>      
+</div>

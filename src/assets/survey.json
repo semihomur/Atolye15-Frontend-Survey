@@ -1,0 +1,28 @@
+[
+    {
+      "name": "React",
+      "questions": [
+        {"question":"Ne kadar süredir React kullanıyorsun?","answers": ["1 yıldan az", "1-3 yıl", "3-5 yıl", "+5 yıl"]},
+        {"question":"React hooklar ile aran nasıl?","answers": ["İyi", "Fena Değil", "Pek kullanamıyorum", "Kullanmıyorum"]},
+        {"question":"State yönetimi için ne kullanıyorsun?","answers": ["React context", "Redux", "Mobx", "Diğer"]}
+      ]
+    },
+    {
+      "name": "Angular",
+      "questions": [
+        {"question":"Ne kadar süredir Angular kullanıyorsun??","answers": ["1 yıldan az", "1-3 yıl", "3-5 yıl", "+5 yıl"]},
+        {"question":"Observable ile aran nasıl?","answers": ["İyi", "Fena Değil", "Pek kullanamıyorum", "Kullanmıyorum"]}
+      ]
+    },
+    {
+      "name": "Vue",
+      "questions": [
+        {"question":"Ne kadar süredir Vue kullanıyorsun?","answers": ["1 yıldan az", "1-3 yıl", "3-5 yıl", "+5 yıl"]},
+        {"question":"Vue kullandığın için kendinden ne kadar tiksiniyorsun?","answers": ["Çok çok çok", "Çok çok", "Çok", "Biraz"]}
+      ]
+    }, 
+    {
+      "name":"Diğer"
+    }
+
+]

@@ -1,0 +1,29 @@
+<form [formGroup]="questionsForm" (ngSubmit)="onSubmit()">
+        <div formArrayName="questionsAndUserAnswers">
+            <div *ngFor="let question of questionsOfFrameworks;let i=index" [formGroupName]="i">
+              <div *ngIf="i==whichQuestion">
+                  <p>{{i+1}}.Soru: {{question.question}}</p>
+                  <mat-form-field class="mr-2">
+                      <mat-label>{{i+1}}.Soru Cevabı</mat-label>
+                      <mat-select formControlName="answers">
+                        <mat-option *ngFor="let answer of question.answers" [value]="answer">{{answer}}</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  <button color="primary" [disabled]="!questionsForm.get('questionsAndUserAnswers').controls[i].valid" mat-button (click)="whichQuestion = whichQuestion+1">İlerle</button>
+              </div>
+        </div>
+      </div>
+        <div *ngIf="whichQuestion === questionsOfFrameworks.length">
+          <mat-label>Diğer</mat-label>
+            <mat-form-field class="w-100">
+                <textarea matInput cdkTextareaAutosize cdkAutosizeMinRows="5" formControlName="otherDescription"></textarea>
+            </mat-form-field>
+            <mat-error *ngIf="questionsForm.get('otherDescription').hasError('required') && questionsForm.get('otherDescription').touched">Lütfen diğer framework açıklamanızı giriniz</mat-error>
+            <mat-error *ngIf="questionsForm.get('otherDescription').errors?.pattern && questionsForm.get('otherDescription').touched">Lütfen geçerli karakter giriniz</mat-error>
+            <button color="primary" [disabled]="questionsForm.get('otherDescription').hasError('required') || questionsForm.get('otherDescription').errors?.pattern" mat-button (click)="whichQuestion = whichQuestion+1">Anketi Gönder</button>
+        </div> 
+      </form>
+<div *ngIf="whichQuestion > questionsOfFrameworks.length">
+      <app-questions-review [form]="questionsForm" [selectedFramework]="selectedFramework"></app-questions-review> 
+      <button color="primary" mat-button type="submit" class="ml-2" (click)="startSurveyAgain()">Başa Dön</button>
+</div> 

@@ -1,0 +1,15 @@
+<mat-card class="my-3">
+      <div *ngIf="firstStep">
+          <ng-template matStepLabel>Lütfen ilgili olduğunuz javascript frameworklerini seçiniz</ng-template>
+          <mat-form-field class="mr-2">
+              <mat-label>Js Frameworks</mat-label>
+              <mat-select multiple>
+                <mat-option (onSelectionChange)="Change($event)"  *ngFor="let framework of survey" [value]="framework">{{framework.name}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <button [disabled]="!selectedFramework.length" color="primary" (click)="firstStep = !firstStep" mat-button>İlerle</button>
+      </div>
+  <div *ngIf="!firstStep">
+      <app-questions [selectedFramework]="selectedFramework" (startAgainSurvey)="startSurvey()"></app-questions>
+  </div>
+</mat-card>
