@@ -1,27 +1,53 @@
-# Witcho2019
+# Atolye15-Frontend-Survey
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.3.
+Here, it's "Frontend Survey". I have developed a basic survey that have requirements below in Angular 8.
+I want to thank you for welcomimg me warmly to all Atolye15 team who has given this task that helps us expand our horizons in programming.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+# Requirements
 
-## Code scaffolding
+## Framework Survey
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Our purpose is collect informations about for some main frontend frameworks which user mostly use.
 
-## Build
+## Story
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+User selects some frontend frameworks which she/he mostly use and answers some questions about them. User should be able to make some comment about them.
 
-## Running unit tests
+## Behaviors
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+**Framework select**
 
-## Running end-to-end tests
+- When user opens the survey then user should see selectable frameworks options and "other" option.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+- When none of the options selected the user should not be able to continue survey.
 
-## Further help
+- When one or more of the options selected user should be able to continue survey
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+**Questions**
+
+- When user selects one or more of the framework options then corresponding question should be shown to user 1 by 1 and in the same order by framework selection.
+
+- When user selects an answer for question then user should be able to continue to next question
+
+- When user answered all questions then comment section should be shown.
+
+**Comment**
+
+- When user on comment step then user should be able to write some comment.
+
+- When user selects "other" framework option then comment should be required.
+
+- When user enter valid comment then user should be able to submit survey.
+
+- When user submits survey then user should see submission screen.
+
+**Submission Screen**
+
+- When user on screen then selected frameworks with their questions and with their answers and comment should be shown.
+
+- When user on screen then user should be able start survey again.
+
+---
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.3.First you neeed to start is npm install and then run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
